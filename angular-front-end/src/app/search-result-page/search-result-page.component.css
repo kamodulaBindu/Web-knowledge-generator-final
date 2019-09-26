@@ -1,0 +1,139 @@
+/* .body{ */
+    /* background-color:#D5D8DC; */
+   
+/* } */
+
+.searchResultPage{
+    padding-bottom: 13vh;
+    }
+    ::-webkit-scrollbar{
+        width:0px;
+        background: transparent;
+    }
+    .container
+    {
+        height:100%; 
+        width:100%;
+        /* margin-top:70px; */
+        position: static;
+        
+    
+    }
+    .searchForm{
+        display: inline;
+        top: 45%;
+        
+       
+    }
+    
+    .mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+        color: #fff;
+        display: inline;
+    
+        
+    }
+    
+    .input{
+        opacity:2;
+        width: 30vw;
+        height: 30px;
+            opacity:0.7;
+            width: 30vw;
+            height: 50px;
+            border-radius: 25px;
+            border: 2px solid rgb(47, 49, 44)
+        }
+        .input:focus { 
+            opacity: 4;
+            border: 2px solid rgb(224, 226, 220);
+            background-color: white;
+          }
+    
+    
+    .mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button{
+        background-color: black;
+        color: white;
+        height: 50px;
+        border-radius: 20px;
+        
+    }
+    
+    .center { 
+        height: 100%;
+        position: relative; 
+        padding-bottom: 20px; 
+    }
+      .mat-progress-spinner {
+        display: block;
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+    :host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+        stroke: #0A344E;
+    }
+    .mat-spinner.mat-spinner.mat-progress-spinner.mat-primary.mat-progress-spinner-indeterminate-animation {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+    }
+
+    .center .searchForm {
+    margin: 0;
+    /* position: absolute; */
+    top: 50%;
+    /* left: 50%; */
+    margin-left: 300px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    
+    .peoplesearch
+    {
+        margin-top: 50px;
+        margin-bottom: -2vh;
+        
+    }
+    .questitle{
+        font-family: 'Numans', sans-serif;
+        font-weight: 600;
+    }
+    
+    h4{
+        color: white;
+        font-weight: bold;
+        font-family: 'Arial', cursive; 
+        /* 'Arial', cursive; */
+    }
+    p{
+        font-family: 'Numans', sans-serif;
+        font-weight: 400;
+    }
+    h5{
+        font-family: 'Numans', sans-serif;
+    }
+    #rcorners2 {
+        border-radius: 25px;
+        border: 2px solid white;
+        background-color: #fff;
+        padding: 20px; 
+        width: 100%;
+        height: 250px; 
+        margin-top: 30px;
+    
+    }
+    
+      mat-panel-title{
+          color: black;
+      }
+      .micbutton{
+        margin:10px;
+        background-color: transparent;
+        border-radius: 10px;
+        align-items: center;
+    
+    }
+    .listen{
+        margin-left: 269px;
+    }    
+    

@@ -1,0 +1,28 @@
+<footer>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <a [routerLink]="['/privacy']">
+        <span>
+          Privacy
+        </span>
+      </a>
+
+      <a [routerLink]="['/help']">
+        <span>
+          Help
+        </span>
+      </a>
+      <a>
+        <span (click)="openContactDialog()">
+          Contact Us
+        </span>
+      </a>
+      <!-- <a>
+          <span  (click)="openFeedbackDialog()">
+
+              Feedback 
+          </span>
+        </a> -->
+    </mat-toolbar-row>
+  </mat-toolbar>
+</footer>

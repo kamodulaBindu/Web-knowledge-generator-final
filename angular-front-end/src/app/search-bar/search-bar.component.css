@@ -1,0 +1,94 @@
+.search-button{
+    border-radius: 8px;
+    border: 0px solid white;
+    background-color: white;
+    margin: 3px;
+    text-align: center;
+    line-height: 1px;
+ }
+
+ .form-control{
+    height: 45px;
+    border-radius: 25px;
+    min-width: 172px;
+    padding: 0.4rem 1.9rem;
+    font-family: 'Numans', sans-serif;
+    font-weight: 500;
+
+ }
+.center {
+    height: 100%;
+    position: relative;
+}
+
+.center .searchForm {
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+width: 45%;
+
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+
+.search {
+    /* The image used */
+    /* background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg"); */
+
+    height: 80vh;
+}
+
+
+.searchForm{
+    display: flex;
+    flex-direction: row;
+  min-width: 220px;
+  height: 45px;
+  border-radius: 25px;
+ }
+
+.input{
+    opacity:0.7;
+    width: 30vw;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid rgb(47, 49, 44)
+}
+.input:focus {
+    opacity: 4;
+    border: 2px solid rgb(47, 49, 44);
+    background-color: white;
+  }
+
+.logo
+{
+    display: inline;
+        font-size: 10vh;
+        color:black;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+
+}
+
+.micbutton{
+    border: 0px solid white;
+    border-radius: 25px;
+    height: 45px;
+    margin-right: 16px;
+    margin-left: -40px;
+    background-color: transparent;
+    /* border-radius: 10px; */
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.btn-label{
+    white-space: pre-line;
+    margin-top:63%; 
+    margin-left:-170%;
+    color: white;
+}
+
+

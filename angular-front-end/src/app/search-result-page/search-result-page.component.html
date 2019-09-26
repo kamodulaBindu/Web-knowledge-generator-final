@@ -1,0 +1,46 @@
+<div class="body">
+<div class="searchResultPage">
+  <div class="container">
+    <div class="center">
+
+    </div>
+
+    <div *ngIf="loadershow == false" class="p">
+        <div *ngIf="maincontent.length == 0" id="rcorners2">
+            <h5>Oops! No Result Found. Please try again.</h5>
+          </div>
+      <div *ngIf="maincontent.length != 0" id="rcorners2">
+        <div *ngFor="let result of maincontent">
+         <h5> {{result}}</h5>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loadershow == true" class="p">
+        <div id="rcorners2">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+          </div>
+      </div>
+
+    <div *ngIf="questions[0] != '' " class="peoplesearch">
+      <h4>PEOPLE ALSO SEARCH</h4>
+      <div *ngFor="let question of questions;let i=index">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="questitle" [innerHTML]="question">
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ul>
+                <li>
+                  <p [innerHTML]="answers[i].replace()" ></p>
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

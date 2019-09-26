@@ -1,0 +1,105 @@
+
+
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+section{
+  margin-left: 16px;
+  margin-right: 16px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
+}
+.card {
+  margin-top: 8px;
+  position: relative;
+  width: 250px;
+  box-sizing: border-box;
+  border-style: solid;
+  align-content: center;
+  margin-bottom: 8px;
+  margin-right: 20px;
+  background-color: rgb(84, 92, 90);
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+mat-accordion
+{
+  background-color: red;
+  margin-top: 50px;
+}
+
+
+.help[_ngcontent-tbv-c1] {
+   padding-top: 1vh; 
+}
+h3{
+  padding-top: 20px ;
+}
+.container{ 
+  display: block;
+  background-color: rgba(248, 240, 240, 0.397);
+  /* margin-left: 13vw; */
+  /* padding-right: 13vw; */
+  height: auto; 
+  margin-bottom: 0%;
+  padding-bottom: 20px;
+  width:80%;
+  position: relative;
+  margin-top: 10%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+   color: #212529;
+  text-align: left;
+  background-color: #fff;
+}  
+
+h3{
+  color: black;
+  font-size: 3.5vh;
+  font-family: 'Numans', sans-serif;
+} 
+p, li{
+  color:rgb(0, 0, 0);
+  font-size: 2vh;
+  font-family: 'Numans', sans-serif;
+}
+.title{
+  color:rgb(0, 0, 0);
+  font-size: 2.5vh;
+  font-family: 'Numans', sans-serif;
+}
+
+.main{
+  background-image: url('/assets/images/background.jpg');
+  background-attachment: fixed; 
+      background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width:100%;
+  height: 90%;
+  overflow: scroll;
+  /* opacity: 0.9; */
+  /* margin-top: 20px; */
+}  
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+   background: transparent;  /* Optional: just make scrollbar invisible*/
+}

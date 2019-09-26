@@ -1,0 +1,23 @@
+<header>
+  <mat-toolbar class="headerbg" fxLayout="column" fxLayout.xs="row">
+    <mat-toolbar-row>
+      <a routerLink="/">
+        <img id="logo" src="assets/images/logoo.png">
+      </a>
+      <span class="header">
+        <a routerLink="/" class="minerva">
+          <h3>MINERVA</h3>
+        </a>
+      </span>
+    
+    <a (click)="logout()">
+     <mat-icon width="40" height="40"
+      class="user" *ngIf="username!='undefined'">account_circle</mat-icon> 
+    </a>
+      <!-- <button mat-button class="user" width="40" height="40"  (click)="logout()">
+        <mat-icon inline=true>account_circle</mat-icon>
+      </button> -->
+    
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

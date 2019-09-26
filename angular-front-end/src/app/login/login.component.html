@@ -1,0 +1,35 @@
+<!-- for header -->
+<app-header></app-header>
+
+<!--domain expert login -->
+<!--body for login page-->
+<div class="main" fxLayoutAlign="center">
+<mat-card class="layout"  ><!--mat card starts here-->
+  <div class="example-container"><!--mat card container-->
+    <mat-card-title><!--mat card title starts here-->
+      Domain Expert Login
+    </mat-card-title><!--mat card title ends here-->
+    <mat-form-field ><!--login form username field-->
+      <mat-label >Username</mat-label><!--label for username-->
+      <!-- input for username -->
+      <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+    </mat-form-field><!--username field ends here-->
+    <mat-form-field><!--login form password field-->
+      <mat-label >Password</mat-label><!--label for password-->
+      <!-- input for username -->
+      <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+    </mat-form-field><!--password field ends here-->
+    <mat-card-footer><!--card footer for displaying error message-->
+      <!--if the value of result is true, then error message will be displayed -->
+      <p *ngIf="result==true" class="invalid">Please enter valid credentials</p>
+    </mat-card-footer> <!--card footer ends here-->
+  </div> <!--card container ends here-->
+  <!-- button for login -->
+  <button mat-raised-button class="login-button" (click)="login()">Login</button>
+
+</mat-card><!--card ends here-->
+<!--body ends here-->
+</div>
+
+<!-- for footer -->
+<app-footer></app-footer>

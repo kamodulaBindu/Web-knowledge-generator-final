@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="main">
+  <div class="container">
+<div class="help">
+  
+    <h3 >Images to help with Search Basics</h3>
+<section class="helpCard">
+    
+    <div class="flex-container" fxLayout="row" fxLayoutGap="10px"  >
+       <div class="splash" *ngFor="let image of images">
+          <mat-card fxFlex="100%" fxFlex.xs="100%" class="card">       
+                 <img class="images" mat-card-image src={{image.img}} alt="help">
+             </mat-card>
+        </div>
+    </div>
+  </section>
+
+    <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Browse The Web
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          <ul>
+              <li><p>You can Search for Movie Domain</p></li>
+              <li><p>Type you question or use microphone to query Minerva</p></li>
+              <li><p>See the results and related questions.</p></li>
+              <li><p>Get fast and one click result.Happy Browsing!</p></li>
+            </ul>
+             
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        How to contact us
+                      </mat-panel-title>
+                      <mat-panel-description>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                <ul>
+                    <li><p>Click on the below Contact us.</p></li>
+                    <li><p>Get the phone number from there.</p></li>
+                    <li><p>Feel free to give us feedback on mention mail id.</p></li>
+                  </ul>
+                   
+                  </mat-expansion-panel>
+          </mat-accordion>
+</div>
+</div>
+</div>
+
+<app-footer></app-footer>

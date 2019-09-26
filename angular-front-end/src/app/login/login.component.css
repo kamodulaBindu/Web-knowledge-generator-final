@@ -1,0 +1,59 @@
+/*  container for login mat-card  */
+  .example-container {
+        display: flex;
+        flex-direction: column;
+        vertical-align: top;
+        width: 92%;
+      }
+/*  for grey login button  */
+      .login-button{
+        background-color:#D5D8DC;
+      }
+     
+
+/*  for login card */
+      .layout{
+        margin-top: 10%;
+        max-width: 500px;
+        width: 50%;
+        text-align: center;
+        border-inline-width: 10px;
+        align-items:center;
+      }
+/*  for center alignment */
+      .center{
+      height: 100%;
+      position: relative;
+      }
+/*  for full width container */
+      .example-container > * {
+        width: 100%;
+      }
+/*  for button */
+      .button{
+          align-self: auto;
+      }
+/* for content */
+      .content {
+        background: #efefef;
+        padding: 20px;
+        margin-top: 25px;
+        line-height: 1.8;
+      }
+
+
+  /* media query for mobile view */
+    @media only screen and (max-width: 320px) {
+
+      /* style the login card */
+      .layout{
+        min-width: 200px;
+        margin-top: 70px;
+        max-width: 500px;
+        margin-left: 15%;
+        margin-right: 25%;
+        text-align: center;
+        border-inline-width: 10px;
+        align-items:center;
+      }
+    }

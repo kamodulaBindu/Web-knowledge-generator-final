@@ -1,0 +1,23 @@
+.kp{
+    padding-top: 1vh;
+    
+}
+.search{
+    padding-top: 10vh;
+    
+}
+
+.main{
+    background-color:#D5D8DC;
+    background-image: url('/assets/images/background.jpg');
+    background-attachment: fixed; 
+        background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width:100%;
+    height: 100%;
+    overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+     background: transparent;  /* Optional: just make scrollbar invisible*/
+  }

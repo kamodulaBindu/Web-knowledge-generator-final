@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="keyword-phrase-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+<<<<<<< HEAD
+      <module name="keyword-phrase-service" target="11" />
+=======
+<<<<<<< HEAD
+      <module name="keyword-phrase-service" target="1.8" />
+=======
+      <module name="keyword-phrase-service" target="11" />
+>>>>>>> 62906e07c6b06f6b75231a3b92b5a30c81beb87c
+>>>>>>> 2ad74a18715993a3b89c6404b2597b94f8e54f35
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="keyword-phrase-service" options="-parameters" />
+    </option>
+  </component>
+</project>

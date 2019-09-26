@@ -1,0 +1,244 @@
+version: '2.1'
+
+services:
+  eureka-server:
+    build: eureka-server/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    image: eureka-server
+    ports:
+      - 8761:8761
+    healthcheck:
+      test: "exit 0"
+
+  config-service:
+    build: config-server/
+    restart: always
+    network_mode: "host"
+    image: config-service
+    hostname: localhost
+    ports:
+      - 8889:8889
+    healthcheck:
+      test: "exit 0"
+
+  angular-front-end:
+    build: angular-front-end/
+    restart: always
+    network_mode: "host"
+    image: angular-front-end
+    hostname: localhost
+    ports:
+      - 4200:4200
+    healthcheck:
+      test: "exit 0"
+
+  zuul-api:
+    build: zuul-api/
+    depends_on:
+      - config-service
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    image: zuul-api
+    hostname: localhost
+    ports:
+      - 8086:8086
+    healthcheck:
+      test: "exit 0"
+
+
+  movie-names-service:
+    build: movie-names-service/
+    depends_on:
+      - zuul-api
+      - eureka-server
+      - config-service
+      - mongo
+    restart: always
+    network_mode: "host"
+    image: movie-names-service
+    hostname: localhost
+    ports:
+      - 8402:8402
+    healthcheck:
+      test: "exit 0"
+
+
+  web-search-service:
+    build: web-search-service/
+    depends_on:
+      - zuul-api
+      - eureka-server
+      - config-service
+      - mongo
+    restart: always
+    network_mode: "host"
+    image: web-search-service
+    hostname: localhost
+    ports:
+      - 8099:8099
+    healthcheck:
+      test: "exit 0"
+
+  notification-service:
+    build: notification-service/
+    depends_on:
+      - zuul-api
+      - eureka-server
+      - config-service
+      - neo4j-fetchdatabase-service
+    restart: always
+    network_mode: "host"
+    image: notification-service
+    hostname: localhost
+    ports:
+      - 8404:8404
+    healthcheck:
+      test: "exit 0"
+
+  fetch-webpage-service:
+    build: fetch-webpage-service/
+    depends_on:
+      - web-search-service
+    restart: always
+    network_mode: "host"
+    image: fetch-webpage-service
+    hostname: localhost
+    ports:
+      - 8090:8090
+    healthcheck:
+      test: "exit 0"
+
+  keyword-phrase-service:
+    build: keyword-phrase-service/
+    depends_on:
+      - fetch-webpage-service
+    restart: always
+    network_mode: "host"
+    image: keyword-phrase-service
+    hostname: localhost
+    ports:
+      - 8092:8092
+    healthcheck:
+      test: "exit 0"
+
+  domain-expert-authentication-service:
+    build: domain-expert-authentication-service/
+    depends_on:
+      - config-service
+      - eureka-server
+      - zuul-api
+      - mongo
+    restart: always
+    network_mode: "host"
+    image: domain-expert-authentication-servicedocker
+    hostname: localhost
+    ports:
+      - 9090:9090
+    healthcheck:
+      test: "exit 0"
+
+  search-nlp-service:
+    build: search-nlp-service/
+    depends_on:
+      - config-service
+      - eureka-server
+      - zuul-api
+      - mongo
+    restart: always
+    network_mode: "host"
+    image: search-nlp-servicedocker
+    hostname: localhost
+    ports:
+      - 8091:8091
+    healthcheck:
+      test: "exit 0"
+
+  neo4j-command-service:
+    build: neo4j-command-service/
+    depends_on:
+      - keyword-phrase-service
+      - neo4j
+    restart: always
+    network_mode: "host"
+    image: neo4j-command-servicedocker
+    hostname: localhost
+    ports:
+      - 8995:8995
+    healthcheck:
+      test: "exit 0"
+
+  neo4j-fetchdatabase-service:
+    build: neo4j-fetchdatabase-service/
+    depends_on:
+      - search-nlp-service
+      - neo4j
+    restart: always
+    network_mode: "host"
+    image: neo4j-fetchdatabase-servicedocker
+    hostname: localhost
+    ports:
+      - 8991:8991
+    healthcheck:
+      test: "exit 0"
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 27017:27017
+    volumes:
+      - /DB/mongo:/data/db
+    healthcheck:
+      test: "exit 0"
+
+  neo4j:
+    image: neo4j:latest
+    environment:
+      NEO4J_AUTH: neo4j/Root@123
+    ports:
+      - 7474:7474
+      - 7687:7687
+    container_name: neo4j
+    network_mode: host
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/neo4j/data:/data
+      - /DB/neo4j/import:/import
+    healthcheck:
+      test: "exit 0"
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 2181:2181
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  kafka:
+    image: wurstmeister/kafka
+    container_name: kafka
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 9092:9092
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: 'localhost:2181'
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CREATE_TOPICS: "test-1, test-2"
+    restart: always
+    healthcheck:
+      test: "exit 0"

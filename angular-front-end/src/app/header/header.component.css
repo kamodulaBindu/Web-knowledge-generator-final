@@ -1,0 +1,42 @@
+.mat-toolbar h3 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 5vh;
+    font-family: 'Monoton', cursive;
+}
+header{
+    height: 7vh;
+    width: 100%;
+    z-index: 0;
+}
+.user{
+    color: white;
+    font-size: 6vh;
+    padding-right: 7vw;
+}
+.header {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.mat-option {
+    margin: 1px;
+    line-height: normal;
+}
+
+#logo {
+    padding-top: -2vh;
+    height: 6vh;
+    align-content: center;
+}
+
+.headerbg {
+    position: fixed;
+    background-color:#0A344E;
+    top: 0;
+    z-index: 999;
+}
+
+.minerva {
+    text-decoration: none;
+}
